@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+        margin: 0;
+        padding: 0;
+      }
+      .mainWrap {
+        width: 100vw;
+        height: 100vh;
+      }
+      .prost {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .prostDiv {
+        border: 1px solid red;
+      }
+      .active {
+        display: none;
+      }
+      .column1 {
+        height: 100vh;
+        width: 45px;
+        background-color: white;
+        position: absolute;
+      }
+      .column2 {
+        height: 100vh;
+        width: 45px;
+        background-color: white;
+        position: absolute;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="column1"></div>
+    <div class="column2"></div>
+    <div class="MainWrap">
+      <div class="prost"></div>
+    </div>
+    <script type="module" src="main.esm.js"></script>
+  </body>
+</html>

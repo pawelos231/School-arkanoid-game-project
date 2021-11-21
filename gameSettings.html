@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>particles.js</title>
+    <meta
+      name="description"
+      content="particles.js is a lightweight JavaScript library for creating particles."
+    />
+    <meta name="author" content="Vincent Garreau" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" media="screen" href="demo/css/style.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .SettingsSiteContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: absolute;
+      }
+
+      .SettingsDiv {
+        width: 30vw;
+        height: 80vh;
+        background-color: white;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      h1 {
+        font-size: 60px;
+      }
+
+      .SoundCustomization {
+        background-color: black;
+        height: 3px;
+        width: 75%;
+      }
+
+      .text {
+        margin-top: -10px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- count particles -->
+
+    <!-- particles.js container -->
+    <div id="particles-js">
+      <div class="SettingsSiteContainer">
+        <div class="SettingsDiv">
+          <h1>SETTINGS</h1>
+          <!--TODO
+                ADD FONT ICONS, FIX THE STYLING
+                -->
+          <div class="SoundCustomization"></div>
+          <p class="text">MUSIC</p>
+          <div class="SoundCustomization"></div>
+          <p class="text">SOUND</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="particles.js"></script>
+    <script src="demo/js/app.js"></script>
+
+    <!-- stats.js -->
+    <script src="demo/js/lib/stats.js"></script>
+  </body>
+</html>
