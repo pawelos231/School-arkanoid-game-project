@@ -11,6 +11,15 @@
         margin: 0;
         padding: 0;
       }
+      .paletkaTak {
+        position: absolute;
+        width: 200px;
+        height: 65px;
+        background-color: white;
+        border-radius: 12px;
+        bottom: 3vh;
+        border: 2px solid red;
+      }
       .mainWrap {
         width: 100vw;
         height: 100vh;
@@ -28,27 +37,13 @@
       .active {
         display: none;
       }
-      .column1 {
-        height: 100vh;
-        width: 45px;
-        background-color: white;
-        position: absolute;
-      }
-      .column2 {
-        height: 100vh;
-        width: 45px;
-        background-color: white;
-        position: absolute;
-        right: 0;
-      }
     </style>
   </head>
   <body>
-    <div class="column1"></div>
-    <div class="column2"></div>
     <div class="MainWrap">
       <div class="prost"></div>
     </div>
     <script type="module" src="main.esm.js"></script>
+    <script src="ruch.js"></script>
   </body>
 </html>

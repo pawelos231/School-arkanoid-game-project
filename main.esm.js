@@ -1,4 +1,5 @@
 import { Prost } from "./obj.esm.js";
+import { Paletka } from "./paletka.esm.js";
 class Main {
   constructor({ prostWrap, Mainwrap }) {
     this.prostWrap = prostWrap;
@@ -28,12 +29,18 @@ class Main {
     }
     return sum;
   }
-
+  drawPaletka() {
+    const paletka = new Paletka({
+      wrapperElement: document.querySelector(".prost"),
+    });
+    paletka.createPaletka();
+  }
   drawProst() {
+    this.drawPaletka();
     for (let i = 0; i < 24; i++) {
       let color = this.randomizeColor();
       this.prost = new Prost({
-        width: "200px",
+        width: "211.25px",
         height: "80px",
         color: color,
         wrapperElement: document.querySelector(".prost"),
@@ -41,7 +48,7 @@ class Main {
       this.prost.createElement(i);
     }
   }
-  deleteTask() {
+  deleteElement() {
     let divs = [...document.querySelectorAll(".prostDiv")];
     for (let i = 0; i < divs.length; i++) {
       divs[i].addEventListener("click", () => {
@@ -56,4 +63,4 @@ export const main = new Main({
   Mainwrap: document.querySelector(".MainWrap"),
 });
 main.drawProst();
-main.deleteTask();
+main.deleteElement();
