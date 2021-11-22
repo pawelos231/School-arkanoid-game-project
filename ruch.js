@@ -5,12 +5,12 @@ setTimeout(() => {
     paletka.style.position = "absolute";
     paletka.style.left = "730px";
   });
-  window.addEventListener("keyup", (e) => {
-    switch (e.key) {
-      case "ArrowLeft":
+  window.addEventListener("keypress", (e) => {
+    switch (e.code) {
+      case "KeyA":
         paletka.style.left = parseInt(paletka.style.left) - moveBy + "px";
         break;
-      case "ArrowRight":
+      case "KeyD":
         paletka.style.left = parseInt(paletka.style.left) + moveBy + "px";
         break;
     }
