@@ -39,12 +39,21 @@ class Main {
     this.drawPaletka();
     for (let i = 0; i < 24; i++) {
       let color = this.randomizeColor();
-      this.prost = new Prost({
-        width: "211.25px",
-        height: "50px",
-        color: color,
-        wrapperElement: document.querySelector(".prost"),
-      });
+      if (window.innerWidth < 720) {
+        this.prost = new Prost({
+          width: "24.5vw",
+          height: "20px",
+          color: color,
+          wrapperElement: document.querySelector(".prost"),
+        });
+      } else {
+        this.prost = new Prost({
+          width: "211.25px",
+          height: "50px",
+          color: color,
+          wrapperElement: document.querySelector(".prost"),
+        });
+      }
       this.prost.createElement(i);
     }
   }

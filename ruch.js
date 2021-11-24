@@ -1,10 +1,18 @@
 setTimeout(() => {
   let paletka = document.querySelector(".paletkaTak");
   let moveBy = 25;
-  window.addEventListener("load", () => {
-    paletka.style.position = "absolute";
-    paletka.style.left = "730px";
-  });
+  if (window.innerWidth < 720) {
+    window.addEventListener("load", () => {
+      paletka.style.position = "absolute";
+      paletka.style.left = "35vw";
+      moveBy = 10;
+    });
+  } else {
+    window.addEventListener("load", () => {
+      paletka.style.position = "absolute";
+      paletka.style.left = "730px";
+    });
+  }
   window.addEventListener("keypress", (e) => {
     switch (e.code) {
       case "KeyA":

@@ -17,6 +17,7 @@
       body {
         background-color: black;
         font-family: Arial, Helvetica, sans-serif;
+        overflow-x: hidden;
       }
 
       .container {
@@ -42,7 +43,7 @@
       }
 
       .StartMenuText {
-        margin-top: -5vh;
+        margin-top: 7vh;
         font-size: 40px;
         font-weight: bold;
         cursor: pointer;
@@ -60,7 +61,7 @@
       }
 
       #textSettings {
-        margin-top: -42vh;
+        margin-top: -32vh;
       }
 
       .scoreTable {
@@ -89,6 +90,40 @@
       a:hover {
         color: white;
       }
+      #username {
+        width: 22%;
+        top: 25%;
+        height: 5%;
+        position: absolute;
+        font-size: 1.5rem;
+        font-weight: bold;
+        transition: 0.2s linear;
+        text-align: center;
+      }
+      #username:hover {
+        background-color: black;
+        color: white;
+      }
+      @media (max-width: 720px) {
+        .pressStart {
+          height: 85vh;
+          width: 70vw;
+        }
+        #username {
+          width: 60%;
+          font-size: 1rem;
+        }
+        .scoreTable {
+          top: 100vh;
+          right: 50vw;
+          transform: translate(50%);
+          width: 70vw;
+        }
+        .StartMenuText {
+          width: 80%;
+          font-size: 1.5rem;
+        }
+      }
     </style>
   </head>
 
@@ -99,6 +134,11 @@
     <div id="particles-js">
       <div class="container">
         <div class="pressStart">
+          <input
+            type="text"
+            id="username"
+            placeholder="wprowadz nazwe uzytkownika..."
+          />
           <p class="StartMenuText" id="textStart">
             <a href="gameLevel.html">START GAME</a>
           </p>
@@ -127,6 +167,7 @@
     <!-- scripts -->
     <script src="particles.js"></script>
     <script src="demo/js/app.js"></script>
+    <script src="Storage.js"></script>
 
     <!-- stats.js -->
     <script src="demo/js/lib/stats.js"></script>
