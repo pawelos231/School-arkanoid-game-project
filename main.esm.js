@@ -41,7 +41,7 @@ class Main {
       let color = this.randomizeColor();
       this.prost = new Prost({
         width: "211.25px",
-        height: "80px",
+        height: "50px",
         color: color,
         wrapperElement: document.querySelector(".prost"),
       });

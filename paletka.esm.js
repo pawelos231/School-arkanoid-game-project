@@ -7,12 +7,5 @@ export class Paletka {
     paletka.className = "paletkaTak";
     this.wrapperElement.appendChild(paletka);
   }
-  movePaletka(y, keycode, paletka) {
-    if (keycode === 37) {
-      paletka.style.left = y;
-    } else if (keycode === 39) {
-      paletka.style.left = -y;
-    }
-  }
   checkCollision() {}
 }

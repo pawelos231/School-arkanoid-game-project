@@ -1,6 +1,6 @@
 setTimeout(() => {
   let paletka = document.querySelector(".paletkaTak");
-  let moveBy = 10;
+  let moveBy = 25;
   window.addEventListener("load", () => {
     paletka.style.position = "absolute";
     paletka.style.left = "730px";
@@ -15,4 +15,4 @@ setTimeout(() => {
         break;
     }
   });
-}, 10);
+}, 40);
