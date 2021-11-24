@@ -37,6 +37,14 @@
       .active {
         display: none;
       }
+      #nie {
+        position: absolute;
+        bottom: 5vh;
+        right: 5vh;
+        color: white;
+        font-weight: bold;
+        font-size: 50px;
+      }
       @media (max-width: 720px) {
         .paletkaTak {
           width: 30vw;
@@ -48,8 +56,10 @@
   <body>
     <div class="MainWrap">
       <div class="prost"></div>
+      <div id="nie"></div>
     </div>
     <script type="module" src="main.esm.js"></script>
     <script src="ruch.js"></script>
+    <script src="counter.js"></script>
   </body>
 </html>

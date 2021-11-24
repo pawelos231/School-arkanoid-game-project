@@ -1,9 +1,11 @@
 import { Prost } from "./obj.esm.js";
 import { Paletka } from "./paletka.esm.js";
 class Main {
-  constructor({ prostWrap, Mainwrap }) {
+  constructor({ prostWrap, Mainwrap, time, timeWrap }) {
     this.prostWrap = prostWrap;
     this.Mainwrap = Mainwrap;
+    this.time = time;
+    this.timeWrap = timeWrap;
   }
   randomizeColor() {
     const tabOfColors = [
@@ -35,7 +37,32 @@ class Main {
     });
     paletka.createPaletka();
   }
-  drawProst() {
+
+  timeCounter() {
+    let div = this.timeWrap;
+    let seconds1 = new Date().getSeconds();
+    let seconds2 = new Date().getSeconds() + this.time;
+    let sumS = seconds2 - seconds1;
+    let minutes1 = seconds1 / 60;
+    let minutes2 = seconds2 / 60;
+    let sumM = minutes2 - minutes1;
+    let counter = 0;
+    setInterval(() => {
+      sumS--;
+      counter++;
+      let sLeft = Math.floor(sumS % 60);
+      let MLeft = Math.floor(sumM % 60);
+      if (counter >= 60) {
+        sumM--;
+        counter = 0;
+      }
+      sLeft >= 10
+        ? (div.textContent = `${MLeft}:${sLeft}`)
+        : (div.textContent = `${MLeft}:0${sLeft}`);
+    }, 1000);
+  }
+  drawMap() {
+    this.timeCounter();
     this.drawPaletka();
     for (let i = 0; i < 24; i++) {
       let color = this.randomizeColor();
@@ -70,6 +97,8 @@ class Main {
 export const main = new Main({
   prostWrap: document.querySelector(".prost"),
   Mainwrap: document.querySelector(".MainWrap"),
+  timeWrap: document.getElementById("nie"),
+  time: 1500,
 });
-main.drawProst();
+main.drawMap();
 main.deleteElement();

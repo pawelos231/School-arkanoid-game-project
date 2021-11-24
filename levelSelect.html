@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" media="screen" href="demo/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <title>Document</title>
     <style>
       body {
@@ -17,7 +22,14 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background-color: black;
+        width: 100vw;
+        position: absolute;
+      }
+      .wrap {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       .level {
@@ -29,6 +41,13 @@
         justify-content: center;
         align-items: center;
         font-size: 35px;
+        transition: 0.2s;
+        cursor: pointer;
+        margin: 5px;
+      }
+      .level:hover {
+        background-color: black;
+        color: white;
       }
       h1 {
         position: absolute;
@@ -38,22 +57,48 @@
         transform: translate(-50%, -20%);
         font-size: 60px;
       }
+      .fa-door-open {
+        position: absolute;
+        top: 5vh;
+        left: 5vh;
+        color: white;
+        font-size: 60px;
+      }
+      @media (max-width: 730px) {
+        .LevelSelectContainer {
+          flex-wrap: wrap;
+        }
+        h1 {
+          font-size: 40px;
+          width: 100%;
+          text-align: center;
+        }
+        .wrap {
+          margin-top: 10vh;
+        }
+      } ;
     </style>
   </head>
   <body>
-    <h1>WYBIERZ LEVEL</h1>
-    <div class="LevelSelectContainer">
-      <div class="level">1</div>
-      <div class="level">2</div>
-      <div class="level">3</div>
-      <div class="level">4</div>
-      <div class="level">5</div>
-      <div class="level">6</div>
-      <div class="level">7</div>
-      <div class="level">8</div>
-      <div class="level">9</div>
-      <div class="level">10</div>
+    <div id="particles-js">
+      <div class="LevelSelectContainer">
+        <h1>WYBIERZ LEVEL</h1>
+        <div class="wrap">
+          <div class="level">1</div>
+          <div class="level">2</div>
+          <div class="level">3</div>
+          <div class="level">4</div>
+          <div class="level">5</div>
+          <div class="level">6</div>
+          <div class="level">7</div>
+          <div class="level">8</div>
+          <div class="level">9</div>
+          <div class="level">10</div>
+        </div>
+        <a href="index.html"><i class="fas fa-door-open"></i></a>
+      </div>
     </div>
-    <script src="AddLevel.js"></script>
+    <script src="particles.js"></script>
+    <script src="demo/js/app.js"></script>
   </body>
 </html>
