@@ -1,6 +1,6 @@
 import { Prost } from "./obj.esm.js";
 import { Paletka } from "./paletka.esm.js";
-class Main {
+export default class Main {
   constructor({ prostWrap, Mainwrap, time, timeWrap }) {
     this.prostWrap = prostWrap;
     this.Mainwrap = Mainwrap;
@@ -93,12 +93,3 @@ class Main {
     }
   }
 }
-
-export const main = new Main({
-  prostWrap: document.querySelector(".prost"),
-  Mainwrap: document.querySelector(".MainWrap"),
-  timeWrap: document.getElementById("nie"),
-  time: 1500,
-});
-main.drawMap();
-main.deleteElement();
