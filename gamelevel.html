@@ -10,9 +10,10 @@
         background-color: black;
         margin: 0;
         padding: 0;
+        font-family: lato;
       }
       .paletkaTak {
-        position: absolute;
+        display: none;
         width: 200px;
         height: 65px;
         background-color: white;
@@ -23,6 +24,9 @@
       .mainWrap {
         width: 100vw;
         height: 100vh;
+      }
+      .blur {
+        filter: blur(5px);
       }
       .prost {
         width: 100%;
@@ -45,10 +49,41 @@
         font-weight: bold;
         font-size: 50px;
       }
+      .text {
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 100px;
+        animation: myanim 4s;
+      }
       @media (max-width: 720px) {
         .paletkaTak {
           width: 30vw;
           height: 5vh;
+        }
+      }
+      @keyframes myanim {
+        0% {
+          font-size: 200px;
+          color: yellow;
+        }
+        25% {
+          font-size: 150px;
+          color: red;
+        }
+        50% {
+          font-size: 200px;
+          color: green;
+        }
+        75% {
+          font-size: 150px;
+          color: white;
+        }
+        100% {
+          font-size: 100px;
+          color: blue;
         }
       }
     </style>
@@ -58,8 +93,10 @@
       <div class="prost"></div>
       <div id="nie"></div>
     </div>
+    <div class="text"></div>
     <script type="module" src="main.esm.js"></script>
     <script src="ruch.js"></script>
     <script type="module" src="select.esm.js"></script>
+    <script type="module" src="blurSiteText.esm.js"></script>
   </body>
 </html>

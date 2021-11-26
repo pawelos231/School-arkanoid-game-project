@@ -23,4 +23,7 @@ setTimeout(() => {
         break;
     }
   });
+  setTimeout(() => {
+    paletka.style.display = "block";
+  }, 4000);
 }, 40);

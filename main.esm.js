@@ -37,7 +37,6 @@ export default class Main {
     });
     paletka.createPaletka();
   }
-
   timeCounter() {
     let div = this.timeWrap;
     let seconds1 = new Date().getSeconds();
@@ -47,19 +46,21 @@ export default class Main {
     let minutes2 = seconds2 / 60;
     let sumM = minutes2 - minutes1;
     let counter = 0;
-    setInterval(() => {
-      sumS--;
-      counter++;
-      let sLeft = Math.floor(sumS % 60);
-      let MLeft = Math.floor(sumM % 60);
-      if (counter >= 60) {
-        sumM--;
-        counter = 0;
-      }
-      sLeft >= 10
-        ? (div.textContent = `${MLeft}:${sLeft}`)
-        : (div.textContent = `${MLeft}:0${sLeft}`);
-    }, 1000);
+    setTimeout(() => {
+      setInterval(() => {
+        sumS--;
+        counter++;
+        let sLeft = Math.floor(sumS % 60);
+        let MLeft = Math.floor(sumM % 60);
+        if (counter >= 60) {
+          sumM--;
+          counter = 0;
+        }
+        sLeft >= 10
+          ? (div.textContent = `${MLeft}:${sLeft}`)
+          : (div.textContent = `${MLeft}:0${sLeft}`);
+      }, 1000);
+    }, 3000);
   }
   drawMap() {
     this.timeCounter();

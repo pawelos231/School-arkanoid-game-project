@@ -86,6 +86,8 @@ export const main1 = new Main({
   timeWrap: objectArray[0].timeWrap,
   time: objectArray[what].time,
 });
-localStorage.clear();
+for (let i = 0; i < 10; i++) {
+  localStorage.removeItem(`Thing${i}`);
+}
 main1.drawMap();
 main1.deleteElement();
