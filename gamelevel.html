@@ -16,6 +16,8 @@
         display: none;
         width: 200px;
         height: 65px;
+        position: absolute;
+        z-index: 3;
         background-color: white;
         border-radius: 12px;
         bottom: 3vh;
@@ -58,6 +60,22 @@
         font-size: 100px;
         animation: myanim 4s;
       }
+      .playerPoints {
+        color: #444;
+        position: absolute;
+        bottom: 70vh;
+        left: 20px;
+        font-size: 30px;
+        display: none;
+      }
+      h1 {
+        color: white;
+        position: absolute;
+        top: 30vh;
+        left: 50vw;
+        transform: translate(-50%, -50%);
+        font-size: 200px;
+      }
       @media (max-width: 720px) {
         .paletkaTak {
           width: 30vw;
@@ -92,8 +110,10 @@
     <div class="MainWrap">
       <div class="prost"></div>
       <div id="nie"></div>
+      <h1></h1>
     </div>
     <div class="text"></div>
+    <div class="playerPoints">Player Points:</div>
     <script type="module" src="main.esm.js"></script>
     <script src="ruch.js"></script>
     <script type="module" src="select.esm.js"></script>

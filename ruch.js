@@ -1,5 +1,6 @@
 setTimeout(() => {
   let paletka = document.querySelector(".paletkaTak");
+  let playerPoints = document.querySelector(".playerPoints");
   let moveBy = 25;
   if (window.innerWidth < 720) {
     window.addEventListener("load", () => {
@@ -25,5 +26,6 @@ setTimeout(() => {
   });
   setTimeout(() => {
     paletka.style.display = "block";
+    playerPoints.style.display = "block";
   }, 4000);
 }, 40);
