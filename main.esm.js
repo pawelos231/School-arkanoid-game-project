@@ -1,5 +1,11 @@
 import { Prost } from "./obj.esm.js";
 import { Paletka } from "./paletka.esm.js";
+
+let arrayOfColorsToGuess = [];
+let copyTab = [];
+let colorToGuess = document.querySelector(".randomColor");
+let small = document.querySelector(".small");
+
 export default class Main {
   constructor({ prostWrap, Mainwrap, time, timeWrap }) {
     this.prostWrap = prostWrap;
@@ -37,13 +43,20 @@ export default class Main {
     });
     paletka.createPaletka();
   }
+  randomColorPick() {
+    console.log(randomizeColor());
+    let randomGeneratedColor = document.querySelector(".randomColor");
+    randomGeneratedColor.textContent = `kolor:${color}`;
+  }
   drawMap() {
     this.drawPaletka();
     for (let i = 0; i < 24; i++) {
       let color = this.randomizeColor();
+      arrayOfColorsToGuess.push(color);
+      copyTab.push(color);
       if (window.innerWidth < 720) {
         this.prost = new Prost({
-          width: "24.5vw",
+          width: "24vw",
           height: "20px",
           color: color,
           wrapperElement: document.querySelector(".prost"),
@@ -67,21 +80,44 @@ export default class Main {
     let points = 0;
     let divs = [...document.querySelectorAll(".prostDiv")];
     let ArrayLength = divs.length;
+
     setTimeout(() => {
       for (let i = 0; i < divs.length; i++) {
+        //console.log(arrayOfColorsToGuess[i]);
+      }
+    }, 4000);
+
+    setTimeout(() => {
+      let random = Math.floor(Math.random() * arrayOfColorsToGuess.length - 1);
+      colorToGuess.textContent = `kolor:${arrayOfColorsToGuess[random]}`;
+      for (let i = 0; i <= divs.length; i++) {
         divs[i].addEventListener("click", () => {
-          divs[i].remove();
-          ArrayLength--;
+          if (arrayOfColorsToGuess[i] == copyTab[random]) {
+            divs[i].remove();
+            copyTab.splice(random, 1);
+            console.log(arrayOfColorsToGuess[i]);
+            console.log(copyTab[random]);
+            random = Math.floor(Math.random() * copyTab.length);
+            console.log(arrayOfColorsToGuess);
+            colorToGuess.textContent = `kolor:${copyTab[random]}`;
+            small.textContent = `Dobrze zdobywasz 100 punktów`;
+            small.style.color = "green";
+            points += 100;
+          } else {
+            small.textContent = `zle, postaraj sie bardziej`;
+            small.style.color = "red";
+          }
+          DivPoints.textContent = `Player Points: ${points}`;
           if (ArrayLength === 0) {
             h1.textContent = "WYGRAŁEŚ";
             localStorage.setItem("stop", "STOP");
+            localStorage.setItem("points", points);
           }
-          points += 100;
-          DivPoints.textContent = `Player Points: ${points}`;
         });
       }
     }, 4000);
   }
+
   timeCounter() {
     let div = this.timeWrap;
     let seconds1 = new Date().getSeconds();
@@ -113,6 +149,7 @@ export default class Main {
         if (localStorage.getItem("stop") != undefined) {
           clearInterval(interval);
           localStorage.removeItem("stop");
+          localStorage.setItem("czas", sumS);
         }
       }, 1000);
     }, 3000);
