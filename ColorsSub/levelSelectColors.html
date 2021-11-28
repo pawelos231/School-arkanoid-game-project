@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" media="screen" href="demo/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .LevelSelectContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+      }
+      .wrap {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .level {
+        width: 100px;
+        height: 100px;
+        background-color: white;
+        margin-right: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 35px;
+        transition: 0.2s;
+        cursor: pointer;
+        margin: 5px;
+      }
+      .level:hover {
+        background-color: black;
+        color: white;
+      }
+      h1 {
+        position: absolute;
+        color: white;
+        left: 50%;
+        top: 20%;
+        transform: translate(-50%, -20%);
+        font-size: 60px;
+      }
+      .fa-door-open {
+        position: absolute;
+        top: 5vh;
+        left: 5vh;
+        color: white;
+        font-size: 60px;
+      }
+      a {
+        color: black;
+      }
+      @media (max-width: 730px) {
+        .LevelSelectContainer {
+          flex-wrap: wrap;
+        }
+        h1 {
+          font-size: 40px;
+          width: 100%;
+          text-align: center;
+        }
+        .wrap {
+          margin-top: 10vh;
+        }
+      } ;
+    </style>
+  </head>
+  <body>
+    <div id="particles-js">
+      <div class="LevelSelectContainer">
+        <h1>WYBIERZ LEVEL</h1>
+        <div class="wrap">
+          <div class="level">1</div>
+          <a href="gamelevelColors.html"> <div class="level">2</div></a>
+          <a href="gamelevelColors.html"> <div class="level">3</div></a>
+          <a href="gamelevelColors.html"> <div class="level">4</div></a>
+          <a href="gamelevelColors.html"> <div class="level">5</div></a>
+          <a href="gamelevelColors.html"> <div class="level">6</div></a>
+          <a href="gamelevelColors.html"> <div class="level">7</div></a>
+          <a href="gamelevelColors.html"> <div class="level">8</div></a>
+          <a href="gamelevelColors.html"> <div class="level">9</div></a>
+          <a href="gamelevelColors.html"> <div class="level">10</div></a>
+        </div>
+        <a href="../index.html"><i class="fas fa-door-open"></i></a>
+      </div>
+    </div>
+    <script src="particles.js"></script>
+    <script type="module" src="checkFuc.esm.js"></script>
+    <script src="demo/js/app.js"></script>
+    <script src="select.esm.js"></script>
+  </body>
+</html>

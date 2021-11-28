@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>particles.js</title>
+    <meta
+      name="description"
+      content="particles.js is a lightweight JavaScript library for creating particles."
+    />
+    <meta name="author" content="Vincent Garreau" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" media="screen" href="demo/css/style.css" />
+    <style>
+      body {
+        background-color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        overflow-x: hidden;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+      }
+
+      .pressStart {
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25vw;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+        border-radius: 12px;
+        flex-wrap: wrap;
+      }
+
+      .StartMenuText {
+        margin-top: 7vh;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        background-color: #ddd;
+        width: 20vw;
+        height: 10vh;
+        text-align: center;
+        line-height: 10vh;
+        transition: 0.2s linear;
+      }
+
+      .StartMenuText:hover {
+        background-color: black;
+        color: white;
+      }
+
+      #textSettings {
+        margin-top: -32vh;
+      }
+
+      .scoreTable {
+        display: flex;
+        justify-content: center;
+        width: 20vw;
+        height: 60vh;
+        right: 5vh;
+        background-color: #ddd;
+        position: absolute;
+        text-align: center;
+        flex-wrap: wrap;
+        border-radius: 5px;
+      }
+
+      .ScorePlayer {
+        width: 90%;
+        height: 10%;
+        margin-top: 1%;
+        background-color: #333;
+        border-radius: 5px;
+      }
+      a {
+        color: black;
+      }
+      a:hover {
+        color: white;
+      }
+      .set {
+        margin-bottom: -160px;
+      }
+      #username {
+        width: 22%;
+        top: 25%;
+        height: 5%;
+        position: absolute;
+        font-size: 1.5rem;
+        font-weight: bold;
+        transition: 0.2s linear;
+        text-align: center;
+      }
+      #username:hover {
+        background-color: black;
+        color: white;
+      }
+      @media (max-width: 720px) {
+        .pressStart {
+          height: 85vh;
+          width: 70vw;
+        }
+        #username {
+          width: 60%;
+          font-size: 1rem;
+        }
+        .scoreTable {
+          top: 100vh;
+          right: 50vw;
+          transform: translate(50%);
+          width: 70vw;
+        }
+        .StartMenuText {
+          width: 80%;
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- count particles -->
+
+    <!-- particles.js container -->
+    <div id="particles-js">
+      <div class="container">
+        <div class="pressStart">
+          <input
+            type="text"
+            id="username"
+            placeholder="wprowadz nazwe uzytkownika..."
+          />
+          <a href="choose.html" class="start">
+            <p class="StartMenuText" id="textStart">START GAME</p>
+          </a>
+          <a href="gameSettings.html" class="set">
+            <p class="StartMenuText" id="textSettings">SETTINGS</p>
+          </a>
+        </div>
+        <div class="scoreTable">
+          <h1>SCORE TABLE</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="particles.js"></script>
+    <script src="demo/js/app.js"></script>
+    <script src="./arkanoidSub/Storage.js"></script>
+
+    <!-- stats.js -->
+    <script src="demo/js/lib/stats.js"></script>
+  </body>
+</html>

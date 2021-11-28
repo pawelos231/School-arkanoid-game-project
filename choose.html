@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        font-family: lato;
+      }
+      .arkanoidContainer {
+        width: 20vw;
+        height: 60vh;
+        background-color: white;
+        position: absolute;
+        top: 20vh;
+        left: 25vw;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        flex-wrap: wrap;
+        transition: 0.2s linear;
+      }
+      .arkanoidContainer:hover {
+        transform: scale(1.2);
+      }
+      .GuessTheColorContainer {
+        width: 20vw;
+        height: 60vh;
+        background-color: white;
+        position: absolute;
+        top: 20vh;
+        right: 25vw;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        flex-wrap: wrap;
+        transition: 0.2s linear;
+      }
+      .GuessTheColorContainer:hover {
+        transform: scale(1.2);
+      }
+      .titleContainer {
+        background-color: black;
+        height: 10%;
+        width: 100%;
+        text-align: center;
+        line-height: 400%;
+      }
+      .textContainer {
+        color: blue;
+        transform: rotate(45deg);
+        flex-basis: 100%;
+        margin-left: -20px;
+        font-size: 50px;
+      }
+      .textContainerArk {
+        color: red;
+        transform: rotate(45deg);
+        flex-basis: 100%;
+        margin-left: -20px;
+        font-size: 50px;
+      }
+      .title {
+        font-size: 30px;
+        color: white;
+      }
+      img {
+        width: 100%;
+        display: block;
+        height: 90%;
+      }
+    </style>
+    <link rel="stylesheet" media="screen" href="demo/css/style.css" />
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <a href="./arkanoidSub/levelSelectArkanoid.html">
+      <div class="arkanoidContainer">
+        <div class="titleContainer">
+          <p class="title">ARKANOID</p>
+        </div>
+        <div class="textContainer">ZAGRAJ</div>
+      </div>
+    </a>
+    <a href="./ColorsSub/levelSelectColors.html">
+      <div class="GuessTheColorContainer">
+        <div class="titleContainer">
+          <p class="title">GRA W KOLORKI</p>
+        </div>
+        <div class="textContainerArk">ZAGRAJ</div>
+      </div></a
+    >
+    <script src="particles.js"></script>
+    <script src="demo/js/app.js"></script>
+  </body>
+</html>
