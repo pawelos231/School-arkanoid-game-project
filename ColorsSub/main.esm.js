@@ -54,10 +54,10 @@ export default class Main {
       let color = this.randomizeColor();
       arrayOfColorsToGuess.push(color);
       copyTab.push(color);
-      if (window.innerWidth < 720) {
+      if (window.innerWidth < 730) {
         this.prost = new Prost({
-          width: "24vw",
-          height: "20px",
+          width: "23%",
+          height: "8vh",
           color: color,
           wrapperElement: document.querySelector(".prost"),
         });
@@ -106,6 +106,7 @@ export default class Main {
           } else {
             small.textContent = `zle, postaraj sie bardziej`;
             small.style.color = "red";
+            points -= 10;
           }
           DivPoints.textContent = `Player Points: ${points}`;
           if (ArrayLength === 0) {

@@ -9,6 +9,9 @@
       * {
         font-family: lato;
       }
+      body {
+        min-height: 200vh;
+      }
       .arkanoidContainer {
         width: 20vw;
         height: 60vh;
@@ -22,6 +25,10 @@
         overflow: hidden;
         flex-wrap: wrap;
         transition: 0.2s linear;
+      }
+      .wrap {
+        display: flex;
+        width: 100vw;
       }
       .arkanoidContainer:hover {
         transform: scale(1.2);
@@ -73,27 +80,54 @@
         display: block;
         height: 90%;
       }
+      @media (max-width: 730px) {
+        .GuessTheColorContainer {
+          width: 70vw;
+          left: 15vw;
+          height: 80vh;
+          top: 5vh;
+        }
+        .arkanoidContainer {
+          top: 100vh;
+          width: 70vw;
+          left: 15vw;
+          height: 80vh;
+        }
+        .wrap {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .textContainer {
+          margin-left: 15px;
+        }
+        .textContainerArk {
+          margin-left: 15px;
+        }
+      } ;
     </style>
     <link rel="stylesheet" media="screen" href="demo/css/style.css" />
   </head>
   <body>
     <div id="particles-js"></div>
-    <a href="./arkanoidSub/levelSelectArkanoid.html">
-      <div class="arkanoidContainer">
-        <div class="titleContainer">
-          <p class="title">ARKANOID</p>
+    <div class="wrap">
+      <a href="./arkanoidSub/levelSelectArkanoid.html">
+        <div class="arkanoidContainer">
+          <div class="titleContainer">
+            <p class="title">ARKANOID</p>
+          </div>
+          <div class="textContainer">ZAGRAJ</div>
         </div>
-        <div class="textContainer">ZAGRAJ</div>
-      </div>
-    </a>
-    <a href="./ColorsSub/levelSelectColors.html">
-      <div class="GuessTheColorContainer">
-        <div class="titleContainer">
-          <p class="title">GRA W KOLORKI</p>
-        </div>
-        <div class="textContainerArk">ZAGRAJ</div>
-      </div></a
-    >
+      </a>
+      <a href="./ColorsSub/levelSelectColors.html">
+        <div class="GuessTheColorContainer">
+          <div class="titleContainer">
+            <p class="title">GRA W KOLORKI</p>
+          </div>
+          <div class="textContainerArk">ZAGRAJ</div>
+        </div></a
+      >
+    </div>
     <script src="particles.js"></script>
     <script src="demo/js/app.js"></script>
   </body>

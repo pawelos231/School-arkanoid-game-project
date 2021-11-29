@@ -42,6 +42,34 @@ function keyDownHandler(e) {
     leftPressed = true;
   }
 }
+function randomizeColor() {
+  const tabOfColors = [
+    "F",
+    "A",
+    "D",
+    "C",
+    "B",
+    "E",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+  ];
+  let sum = "#";
+  for (let j = 0; j < 6; j++) {
+    sum += tabOfColors[Math.floor(Math.random() * tabOfColors.length)];
+  }
+  return sum;
+}
+let tab = [];
+for (let i = 0; i < brickColumnCount * brickRowCount; i++) {
+  tab.push(randomizeColor());
+}
 
 function createStatsTable() {
   let table = document.createElement("div");
@@ -49,7 +77,8 @@ function createStatsTable() {
   table.style.width = "30vw";
   table.style.height = "80vh";
   table.style.backgroundColor = "white";
-  p.style.color = "blue";
+  p.style.color = "black";
+  p.style.marginTop = "20px";
   let wynik = localStorage.getItem("wynik");
   let zycia = localStorage.getItem("zycia");
   let czas = localStorage.getItem("czas");
@@ -58,9 +87,8 @@ function createStatsTable() {
   let username = localStorage.getItem("username");
   let timeMultiplier = czas / 100;
   console.log(timeMultiplier);
-  p.innerHTML = `punkty: ${((wynik * zycia) / timeMultiplier).toFixed(
-    1
-  )} <br> grałeś w: ${gra} <br> nazwa gracza: ${username}`;
+  p.innerHTML = `punkty: ${wynik * zycia}
+  )} <br> grałeś w: ${gra} <br> nazwa gracza: ${username} <br> <p class="time">czas:</p>  <h2 class="timeCount">${czas} sekund</h2>`;
   table.style.borderRadius = "8px";
   table.appendChild(p);
   statsWrap.appendChild(table);
@@ -120,9 +148,11 @@ function collisionDetection() {
 }
 
 function drawBall() {
+  let username = localStorage.getItem("username");
   ctx.beginPath();
   ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
   ctx.fillStyle = "#0095DD";
+  ctx.fillText(username, 0, 0);
   ctx.fill();
   ctx.closePath();
 }
@@ -144,7 +174,7 @@ function drawBricks() {
         bricks[c][r].y = brickY;
         ctx.beginPath();
         ctx.rect(brickX, brickY, brickWidth, brickHeight);
-        ctx.fillStyle = "white";
+        ctx.fillStyle = tab[c];
         ctx.fill();
         ctx.closePath();
       }
