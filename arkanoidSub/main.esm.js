@@ -44,7 +44,6 @@ export default class Main {
         let MLeft = Math.floor(sumM % 60);
         if (counter >= 60) {
           sumM--;
-          counter = 0;
         }
         sLeft >= 10
           ? (div.textContent = `${MLeft}:${sLeft}`)

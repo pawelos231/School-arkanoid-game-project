@@ -88,7 +88,7 @@ function createStatsTable() {
   let timeMultiplier = czas / 100;
   console.log(timeMultiplier);
   p.innerHTML = `punkty: ${wynik * zycia}
-  )} <br> grałeś w: ${gra} <br> nazwa gracza: ${username} <br> <p class="time">czas:</p>  <h2 class="timeCount">${czas} sekund</h2>`;
+   <br> grałeś w: ${gra} <br> nazwa gracza: ${username} <br> <p class="time">czas:</p>  <h2 class="timeCount">${czas} sekund</h2>`;
   table.style.borderRadius = "8px";
   table.appendChild(p);
   statsWrap.appendChild(table);
@@ -109,9 +109,9 @@ if (window.innerWidth < 720) {
   }
 }
 function collisionDetection() {
-  for (var c = 0; c < brickColumnCount; c++) {
-    for (var r = 0; r < brickRowCount; r++) {
-      var b = bricks[c][r];
+  for (let c = 0; c < brickColumnCount; c++) {
+    for (let r = 0; r < brickRowCount; r++) {
+      let b = bricks[c][r];
       if (b.status == 1) {
         if (
           x > b.x &&
